@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payment_platforms', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 50);
-            $table->string('image');
+        Schema::create('currencies', function (Blueprint $table) {
+            $table->string('iso', 3)->primary();
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payment_platforms');
+        Schema::dropIfExists('currencies');
     }
 };
