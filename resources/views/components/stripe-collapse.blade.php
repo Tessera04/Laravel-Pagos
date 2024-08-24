@@ -1,0 +1,1 @@
+<small>Seras dirigido al checkout de Stripe!</small>
