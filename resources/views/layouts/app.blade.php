@@ -93,9 +93,13 @@
                 @if (session()->has('success'))
                     <div class="alert alert-success">
                         <ul>
-                            @foreach (session()->get('success') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
+                            @if (is_array(session()->get('success')))
+                                @foreach (session()->get('success') as $message)
+                                    <li>{{ $message }}</li>
+                                @endforeach
+                            @else
+                                <li>{{ session()->get('success') }}</li>
+                            @endif
                         </ul>
                     </div>
                 @endif
