@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -23,6 +24,13 @@ return [
         'client_id' => env('PAYPAL_CLIENT_ID'),
         'client_secret' => env('PAYPAL_CLIENT_SECRET'),
         'class' => App\Services\PayPalServices::class,
+    ],
+
+    'stripe' => [
+        'base_uri' => env('STRIPE_BASE_URI'),
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+        'class' => App\Services\StripeServices::class,
     ],
 
     'ses' => [

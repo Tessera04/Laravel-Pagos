@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Resolvers\PaymentPlatformResolver;
 use App\Services\PayPalServices;
+use App\Services\StripeServices;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -22,6 +23,8 @@ class PaymentController extends Controller
             'currency' => 'required|exists:currencies,iso',
             'payment_platform' => 'required|exists:payment_platforms,id',
         ];
+
+        dd($request->all());
 
         $request->validate($rules);
 
